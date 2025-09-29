@@ -29,13 +29,14 @@
    cd /Environment/ONPREM
    terraform init
    ```
-   # Adjusts the variables from the terraform.example.tfvars as you needed
+   Adjusts the variables from the terraform.example.tfvars as you needed
 
    ```bash
    terraform plan -var-file terraform.tfvars
    terraform apply -var-file terraform.tfvars
    ```
-   # Take the output and copy into a txt file. Ex
+   Take the output and copy into a txt file. Example:
+   
     ```bash
     ONPREM-CIDR_BLOCK = "10.192.0.0/16"
     ONPREM-DNS-1 = "10.192.1.27"

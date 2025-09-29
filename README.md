@@ -11,32 +11,37 @@
 
 ## 🚀 Quick Start
 
-1. **Clone the repository**
+1. **Static Configuration**
+
+    Select 2 statically IP address to provision the INBOUND Route 53 Resolver to configure latter into the AWS infrastructure
+    and the EC2 DNS servers ONPREM infrastructure. Example:
+  
+2. **Clone the repository**
 
    ```bash
    git clone <your-repo-url>
    cd terraform-hybrid-dns
    ```
-2. **Configure AWS credentials**
+3. **Configure AWS credentials**
 
    ```bash
    aws configure
    ```
 
-3. **ONPREM infrastructure**
+4. **ONPREM infrastructure**
 
    ```bash
-   cd /Environment/ONPREM
+   cd /Environments/ONPREM
    terraform init
    ```
    Adjusts the variables from the terraform.example.tfvars as you needed
 
    ```bash
-   terraform plan -var-file terraform.tfvars
-   terraform apply -var-file terraform.tfvars
+   terraform plan
+   terraform apply
    ```
    Take the output and copy into a txt file. Example:
-   
+
     ```bash
     ONPREM-CIDR_BLOCK = "10.192.0.0/16"
     ONPREM-DNS-1 = "10.192.1.27"
@@ -48,6 +53,12 @@
 5. **AWS infrastructure**
 
    ```bash
-   cd /Environment/AWS
+   cd /Environments/AWS
    terraform init
+   ```
+    Adjusts the variables from the terraform.example.tfvars as you needed
+
+   ```bash
+   terraform plan 
+   terraform apply
    ```

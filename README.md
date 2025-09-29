@@ -65,13 +65,13 @@
     ONPREM-RT_ID = "rtb-0d3a0bd1c33979d62"
     ONPREM-VPC_ID = "vpc-0fec92ec59d1da940"
     ```
-    
-   Then configure the /etc/systemd/resolved.conf file in the EC2 application server to use the DNS servers:
 
-  ```bash
+   Then configure the `/etc/systemd/resolved.conf` file in the EC2 application server to use the DNS servers:
+
+    ```bash
     DNS= 
     Domains=~.
-   ```
+    ```
 
 5. **AWS infrastructure**
 

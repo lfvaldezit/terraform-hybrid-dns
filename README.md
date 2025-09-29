@@ -140,27 +140,27 @@
 │       ├── terraform.example.tfvars.tf
 │       ├── variables.tf
 │       └── version.tf            
-├── modules/
-│   └── ec2/     
-│   │   ├── main.tf        
-│   │   ├── outputs.tf 
-│   │   └── variables.tf
-│   └── peering/     
-│   │   ├── main.tf        
-│   │   ├── outputs.tf 
-│   │   └── variables.tf 
-│   └── route53-zone/     
-│   │   ├── main.tf        
-│   │   ├── outputs.tf 
-│   │   └── variables.tf 
-│   └── security-group/     
-│   │   ├── main.tf        
-│   │   ├── outputs.tf 
-│   │   └── variables.tf 
-│   └── vpc/     
-│       ├── main.tf        
-│       ├── outputs.tf 
-│       └── variables.tf 
+└── modules/
+    └── ec2/     
+    │   ├── main.tf        
+    │   ├── outputs.tf 
+    │   └── variables.tf
+    └── peering/     
+    │   ├── main.tf        
+    │   ├── outputs.tf 
+    │   └── variables.tf 
+    └── route53-zone/     
+    │   ├── main.tf        
+    │   ├── outputs.tf 
+    │   └── variables.tf 
+    └── security-group/     
+    │   ├── main.tf        
+    │   ├── outputs.tf 
+    │   └── variables.tf 
+    └── vpc/     
+        ├── main.tf        
+        ├── outputs.tf        
+        └── variables.tf 
 ```
 ## 📝 Notes
 

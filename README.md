@@ -1,7 +1,7 @@
 # Hybrid DNS between AWS and simulated ONPREM infra
 
 ## 🏗️ Architecture
-
+<img width="700" height="421" alt="image" src="https://github.com/lfvaldezit/terraform-hybrid-dns/blob/main/image.png" />
 - **VPC**: An isolated environment for launching AWS resources
 - **EC2 Instances**: VM used to provision ON-PREM DNS servers and APP servers
 - **Route53 Private Hosted Zone**: A private DNS zone for the AWS VPC
@@ -49,7 +49,7 @@
     inbound_r53_resolver_ip_1 = "192.168.1.200"
     inbound_r53_resolver_ip_2 = "192.168.2.200"
    ```
-   
+
    ```bash
     terraform plan
    ```

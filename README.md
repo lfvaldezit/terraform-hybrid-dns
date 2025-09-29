@@ -49,6 +49,7 @@
     inbound_r53_resolver_ip_1 = "192.168.1.200"
     inbound_r53_resolver_ip_2 = "192.168.2.200"
    ```
+   
    ```bash
     terraform plan
    ```

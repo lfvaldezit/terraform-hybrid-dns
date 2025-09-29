@@ -116,6 +116,52 @@
     ```bash
     terraform apply
     ```
+
+## 📁 Project Structure
+
+```
+├── image.png              
+├── README.md        
+├── .gitignore          
+├── environments/
+│   └── AWS/
+│   │   ├── locals.tf
+│   │   ├── main.tf        
+│   │   ├── outputs.tf 
+│   │   ├── providers.tf
+│   │   ├── terraform.example.tfvars.tf
+│   │   ├── variables.tf
+│   │   └── version.tf  
+│   └── ONPREM/
+│       ├── locals.tf
+│       ├── main.tf        
+│       ├── outputs.tf 
+│       ├── providers.tf
+│       ├── terraform.example.tfvars.tf
+│       ├── variables.tf
+│       └── version.tf            
+├── modules/
+│   └── ec2/     
+│   │   ├── main.tf        
+│   │   ├── outputs.tf 
+│   │   └── variables.tf
+│   └── peering/     
+│   │   ├── main.tf        
+│   │   ├── outputs.tf 
+│   │   └── variables.tf 
+│   └── route53-zone/     
+│   │   ├── main.tf        
+│   │   ├── outputs.tf 
+│   │   └── variables.tf 
+│   └── security-group/     
+│   │   ├── main.tf        
+│   │   ├── outputs.tf 
+│   │   └── variables.tf 
+│   └── vpc/     
+│       ├── main.tf        
+│       ├── outputs.tf 
+│       └── variables.tf 
+```
 ## 📝 Notes
 
 The original idea for this design came from Cloud Trainer, Adrian Cantrill. Link [here](https://github.com/acantril/learn-cantrill-io-labs/tree/master/aws-hybrid-dns)

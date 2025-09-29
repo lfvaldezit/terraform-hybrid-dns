@@ -13,7 +13,7 @@
 
 1. **Static Configuration**
 
-    Select 2 statically IP address to provision the INBOUND Route 53 Resolver to configure latter into the AWS infrastructure
+    Select 2 static IP address to provision the INBOUND Route 53 Resolver to configure latter into the AWS infrastructure
     and the EC2 DNS servers ONPREM infrastructure. Example:
   
 2. **Clone the repository**

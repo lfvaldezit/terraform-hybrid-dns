@@ -116,3 +116,6 @@
     ```bash
     terraform apply
     ```
+    📝 Notes
+
+    The original idea for this design came from Cloud Trainer, Adrian Cantrill. Link [here](https://github.com/acantril/learn-cantrill-io-labs/tree/master/aws-hybrid-dns)

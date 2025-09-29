@@ -61,7 +61,7 @@
 
    Take the output and copy into a txt file. Example:
  
-    ONPREM-CIDR_BLOCK = "10.192.0.0/16"
+    ONPREM-CIDR_BLOCK = 10.192.0.0/16
     ONPREM-DNS-1 = "10.192.1.27"
     ONPREM-DNS-2 = "10.192.2.107"
     ONPREM-RT_ID = "rtb-0d3a0bd1c33979d62"

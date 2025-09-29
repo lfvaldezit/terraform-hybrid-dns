@@ -2,12 +2,12 @@
 
 ## 🏗️ Architecture
 
-**VPC**: Isolated environment to launch AWS resources
-**EC2 Instances**: VM to provision ONPREM DNS servers and APP servers
-**Route53 Private Hosted Zone**: Private DNS zone for the AWS VPC
-**IN/OUT Route53 Resolver**: Enables DNS queries between VPC and external DNS servers
-**SSM Endpoints**: Allows EC2 instances in private subnets to communicate with AWS Systems Manager
-**S3 Gateway Endpoint**: Allows EC2 instances to be able  to download from Amazon S3 repolist
+- **VPC**: Isolated environment to launch AWS resources
+- **EC2 Instances**: VM to provision ONPREM DNS servers and APP servers
+- **Route53 Private Hosted Zone**: Private DNS zone for the AWS VPC
+- **IN/OUT Route53 Resolver**: Enables DNS queries between VPC and external DNS servers
+- **SSM Endpoints**: Allows EC2 instances in private subnets to communicate with AWS Systems Manager
+- **S3 Gateway Endpoint**: Allows EC2 instances to be able  to download from Amazon S3 repolist
 
 ## 🚀 Quick Start
 

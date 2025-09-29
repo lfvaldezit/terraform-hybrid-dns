@@ -66,10 +66,10 @@
     ONPREM-VPC_ID = "vpc-0fec92ec59d1da940"
     ```
 
-   Then configure the `/etc/systemd/resolved.conf` file in the EC2 application server to use the DNS servers:
+   Select the `*-ec2-app` and configure the `/etc/systemd/resolved.conf` file:
 
     ```bash
-    DNS= 
+    DNS= 10.192.1.27 10.192.2.107
     Domains=~.
     ```
 

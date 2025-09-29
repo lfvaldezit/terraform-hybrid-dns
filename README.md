@@ -53,8 +53,12 @@
 
    ```bash
    terraform plan
+   ```
+   
+   ```bash
    terraform apply
    ```
+
    Take the output and copy into a txt file. Example:
 
     ```bash

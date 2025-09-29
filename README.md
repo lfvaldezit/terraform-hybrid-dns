@@ -72,8 +72,8 @@
    terraform init
    ```
     Adjusts the variables from the terraform.example.tfvars as you needed
-    
-    ```hcl
+
+    ```bash
     name       = "vpc-aws"
     cidr_block = "192.168.0.0/16"
 
@@ -96,11 +96,12 @@
     target_route_table_id = "rtb-0d3a0bd1c33979d62" # ONPREM-RT_ID
     target_ip_primary     = "10.192.1.27"           # ONPREM-DNS-1
     target_ip_secondary   = "10.192.2.107"          # ONPREM-DNS-2
+     ```
 
-   ```bash
-   terraform plan
-   ```
+    ```bash
+    terraform plan
+    ```
 
-   ```bash
-   terraform apply
-   ```
+    ```bash
+    terraform apply
+    ```

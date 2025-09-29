@@ -2,12 +2,12 @@
 
 ## 🏗️ Architecture
 
-- **VPC**: Isolated environment to launch AWS resources
-- **EC2 Instances**: VM to provision ONPREM DNS servers and APP servers
-- **Route53 Private Hosted Zone**: Private DNS zone for the AWS VPC
-- **IN/OUT Route53 Resolver**: Enables DNS queries between VPC and external DNS servers
-- **SSM Endpoints**: Allows EC2 instances in private subnets to communicate with AWS Systems Manager
-- **S3 Gateway Endpoint**: Allows EC2 instances to be able  to download from Amazon S3 repolist
+- **VPC**: An isolated environment for launching AWS resources
+- **EC2 Instances**: VM used to provision ON-PREM DNS servers and APP servers
+- **Route53 Private Hosted Zone**: A private DNS zone for the AWS VPC
+- **IN/OUT Route53 Resolver**: Enables DNS queries between the VPC and external DNS servers
+- **SSM Endpoints**: Allow EC2 instances in private subnets to communicate with AWS Systems Manager
+- **S3 Gateway Endpoint**: Allows EC2 instances to download from the Amazon S3 repository list
 
 ## ⚙️ Configuration
 
@@ -28,13 +28,13 @@
    aws configure
    ```
 
-4. **ONPREM infrastructure**
+4. **ON-PREM infrastructure**
 
    ```bash
    cd /Environments/ONPREM
    terraform init
    ```
-   Adjusts the variables from the terraform.example.tfvars as you needed
+   Adjusts the variables in terraform.example.tfvars as needed
 
     ```bash
     name                 = "vpc-onprem"
@@ -57,7 +57,7 @@
    terraform apply
    ```
 
-   Take the output and copy into a txt file. Example:
+   Save the output  into a txt file. Example:
     ```hcl
     ONPREM-CIDR_BLOCK = "10.192.0.0/16"
     ONPREM-DNS-1 = "10.192.1.27"
@@ -71,7 +71,7 @@
    cd /Environments/AWS
    terraform init
    ```
-    Adjusts the variables from the terraform.example.tfvars as you needed
+    Adjusts the variables in terraform.example.tfvars as needed
 
     ```bash
     name       = "vpc-aws"

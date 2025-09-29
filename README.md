@@ -49,8 +49,6 @@
     inbound_r53_resolver_ip_1 = "192.168.1.200"
     inbound_r53_resolver_ip_2 = "192.168.2.200"
    ```
-    Plan and then deploy the infrastructure
-
    ```bash
    terraform plan
    ```
@@ -74,6 +72,7 @@
    terraform init
    ```
     Adjusts the variables from the terraform.example.tfvars as you needed
+    
     ```hcl
     name       = "vpc-aws"
     cidr_block = "192.168.0.0/16"

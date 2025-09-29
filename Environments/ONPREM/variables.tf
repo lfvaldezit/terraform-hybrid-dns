@@ -30,3 +30,11 @@ variable "subnets" {
     az         = string
   }))
 }
+
+variable "inbound_r53_resolver_ip_1" {
+  type = string
+}
+
+variable "inbound_r53_resolver_ip_2" {
+  type = string
+}

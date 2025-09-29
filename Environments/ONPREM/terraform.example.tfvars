@@ -9,3 +9,6 @@ instance_type      = "t2.micro"
 
 subnets = [{ name = "onprem-private-1a", cidr_block = "10.192.1.0/24", az = "us-east-1a" },
 { name = "onprem-private-1b", cidr_block = "10.192.2.0/24", az = "us-east-1b" }]
+
+inbound_r53_resolver_ip_1 = "192.168.1.200"
+inbound_r53_resolver_ip_2 = "192.168.2.200"

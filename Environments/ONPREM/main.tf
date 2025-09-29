@@ -19,16 +19,6 @@ module "security-group" {
   common_tags = local.common_tags
 }
 
-# module "vpc" {
-#   source                  = "../../modules/vpc"
-#   name                    = var.name
-#   cidr_block              = var.cidr_block
-#   private_subnet_cidrs    = var.private_subnet_cidrs
-#   availability_zones      = var.availability_zones
-#   common_tags             = local.common_tags
-#   create_r53_in_endpoint  = false
-#   create_r53_out_endpoint = false
-# }
 
 module "vpc" {
   source                  = "../../modules/vpc"
@@ -69,18 +59,18 @@ module "ec2-dns-1" {
                         bindkeys-file "/etc/named.iscdlv.key";
                         managed-keys-directory "/var/named/dynamic";
                       };
-                      zone "corp.example4life.org" IN {
+                      zone "onprem.example4life.org" IN {
                           type master;
-                          file "corp.example4life.org.zone";
+                          file "onprem.example4life.org.zone";
                           allow-update { none; };
                       };
                       zone "aws.example4life.org" {
                       type forward;
                       forward only;
-                      forwarders { 192.168.1.200; 192.168.2.200; };
+                      forwarders { ${var.inbound_r53_resolver_ip_1}; ${var.inbound_r53_resolver_ip_2}; };
                       };
                       EON
-                      cat <<EOD > /var/named/corp.example4life.org.zone
+                      cat <<EOD > /var/named/onprem.example4life.org.zone
                       \$TTL 86400
                       @   IN  SOA     ns1.mydomain.com. root.mydomain.com. (
                               2013042201  ;Serial
@@ -90,8 +80,8 @@ module "ec2-dns-1" {
                               86400       ;Minimum TTL
                       )
                       ; Specify our two nameservers
-                          IN	NS		dnsA.corp.example4life.org.
-                          IN	NS		dnsB.corp.example4life.org.
+                          IN	NS		dnsA.onprem.example4life.org.
+                          IN	NS		dnsB.onprem.example4life.org.
                       ; Resolve nameserver hostnames to IP, replace with your two droplet IP addresses.
                       dnsA		IN	A		1.1.1.1
                       dnsB	  IN	A		8.8.8.8
@@ -134,18 +124,18 @@ module "ec2-dns-2" {
                         bindkeys-file "/etc/named.iscdlv.key";
                         managed-keys-directory "/var/named/dynamic";
                       };
-                      zone "corp.example4life.org" IN {
+                      zone "onprem.example4life.org" IN {
                           type master;
-                          file "corp.example4life.org.zone";
+                          file "onprem.example4life.org.zone";
                           allow-update { none; };
                       };
                       zone "aws.example4life.org" {
                       type forward;
                       forward only;
-                      forwarders { 192.168.100.200; 192.168.101.200; };
+                      forwarders { ${var.inbound_r53_resolver_ip_1}; ${var.inbound_r53_resolver_ip_2}; };
                       };
                       EON
-                      cat <<EOD > /var/named/corp.example4life.org.zone
+                      cat <<EOD > /var/named/onprem.example4life.org.zone
                       \$TTL 86400
                       @   IN  SOA     ns1.mydomain.com. root.mydomain.com. (
                               2013042201  ;Serial
@@ -155,8 +145,8 @@ module "ec2-dns-2" {
                               86400       ;Minimum TTL
                       )
                       ; Specify our two nameservers
-                          IN	NS		dnsA.corp.example4life.org.
-                          IN	NS		dnsB.corp.example4life.org.
+                          IN	NS		dnsA.onprem.example4life.org.
+                          IN	NS		dnsB.onprem.example4life.org.
                       ; Resolve nameserver hostnames to IP, replace with your two droplet IP addresses.
                       dnsA		IN	A		1.1.1.1
                       dnsB	  IN	A		8.8.8.8

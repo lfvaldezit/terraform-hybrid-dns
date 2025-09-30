@@ -64,8 +64,8 @@
     ONPREM-CIDR_BLOCK = "10.192.0.0/16"
     ONPREM-DNS-1 = "10.192.1.27"
     ONPREM-DNS-2 = "10.192.2.107"
-    ONPREM-RT_ID = "rtb-0d3a0bd1c33979d62"
-    ONPREM-VPC_ID = "vpc-0fec92ec59d1da940"
+    ONPREM-RT_ID = "rtb-xxxxxxxxxxxxxxxxx"
+    ONPREM-VPC_ID = "vpc-xxxxxxxxxxxxxxxxx"
     ```
 
    Connect using Session Manager into the  `*-ec2-app` 
@@ -102,9 +102,9 @@
     # --------------- OUTPUT ONPREM INFRA ----------------- #
 
     target_domain_name    = "onprem.example4life.org"
-    target_vpc_id         = "vpc-0fec92ec59d1da940" # ONPREM-VPC_ID
+    target_vpc_id         = "vpc-xxxxxxxxxxxxxxxxx" # ONPREM-VPC_ID
     target_cidr_block     = "10.192.0.0/16"         # ONPREM-CIDR_BLOCK
-    target_route_table_id = "rtb-0d3a0bd1c33979d62" # ONPREM-RT_ID
+    target_route_table_id = "rtb-xxxxxxxxxxxxxxxxx" # ONPREM-RT_ID
     target_ip_primary     = "10.192.1.27"           # ONPREM-DNS-1
     target_ip_secondary   = "10.192.2.107"          # ONPREM-DNS-2
      ```

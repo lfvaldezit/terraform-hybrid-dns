@@ -7,7 +7,7 @@ subnets = [{ name = "aws-private-1a", cidr_block = "192.168.1.0/24", az = "us-ea
 ami_id        = "ami-08982f1c5bf93d976"
 instance_type = "t2.micro"
 
-domain_name = "example4life.org"
+domain_name = "aws.example4life.org"
 
 inbound_r53_resolver_ip_1 = "192.168.1.200"
 inbound_r53_resolver_ip_2 = "192.168.2.200"

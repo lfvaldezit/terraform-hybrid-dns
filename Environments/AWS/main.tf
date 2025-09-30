@@ -16,7 +16,6 @@ module "security-group" {
   egress_cidr_to_port   = [-1, 53, 53, 443]
   egress_cidr_protocol  = ["icmp", "udp", "tcp", "tcp"]
 
-
   common_tags = local.common_tags
 }
 
@@ -65,6 +64,6 @@ module "route53-zone" {
   source       = "../../modules/route53-zone"
   domain_name  = var.domain_name
   vpc_id       = module.vpc.vpc_id
-  record_name  = "app1.aws.example4life.org"
+  record_name  = "webA.aws.example4life.org"
   record_value = module.ec2-app.private_ip
 }

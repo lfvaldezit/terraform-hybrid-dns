@@ -12,24 +12,19 @@
 
 ## ⚙️ Configuration
 
-1. **Static Configuration**
-
-    Select 2 static IP address to provision the INBOUND Route 53 Resolver to configure latter into the AWS infrastructure
-    and the EC2 DNS servers ONPREM infrastructure. Example:
-  
-2. **Clone the repository**
+1. **Clone the repository**
 
    ```bash
    git clone <your-repo-url>
    cd terraform-hybrid-dns
    ```
-3. **Configure AWS credentials**
+2. **Configure AWS credentials**
 
    ```bash
    aws configure
    ```
 
-4. **ON-PREM infrastructure**
+3. **ON-PREM infrastructure**
 
    ```bash
    cd /Environments/ONPREM
@@ -68,15 +63,15 @@
     ONPREM-VPC_ID = "vpc-xxxxxxxxxxxxxxxxx"
     ```
 
-   Connect using Session Manager into the  `*-ec2-app` 
-   Type `sudo nano /etc/systemd/resolved.conf` and add the following:
+   Connect using Session Manager into the  `*-ec2-app`
+Type `sudo nano /etc/systemd/resolved.conf` and add the following:
 
     ```bash
     DNS= 10.192.1.27 10.192.2.107
     Domains=~.
     ```
 
-5. **AWS infrastructure**
+4. **AWS infrastructure**
 
    ```bash
    cd /Environments/AWS

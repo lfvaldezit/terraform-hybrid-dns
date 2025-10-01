@@ -10,5 +10,5 @@ resource "aws_route53_record" "this" {
   name    = var.record_name
   type    = "A"
   ttl     = 300
-  records = [var.record_value]
+  records = var.record_value
 }

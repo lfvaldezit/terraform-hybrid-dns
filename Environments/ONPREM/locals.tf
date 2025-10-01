@@ -3,8 +3,8 @@ locals {
   profile    = "default"
 
   common_tags = {
-    Owner       = ""
-    Environment = ""
+    Owner       = "user"
+    Environment = "ONPREM"
     ManagedBy   = "Terraform"
   }
 }

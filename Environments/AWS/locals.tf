@@ -3,8 +3,8 @@ locals {
   profile    = "default"
 
   common_tags = {
-    Owner       = "demo"
-    Environment = "dev"
+    Owner       = "user"
+    Environment = "AWS"
     ManagedBy   = "Terraform"
   }
 }

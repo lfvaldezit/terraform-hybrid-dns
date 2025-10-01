@@ -166,7 +166,6 @@ resource "aws_route53_resolver_endpoint" "out" {
 resource "aws_route53_resolver_rule" "this" {
   count = var.create_r53_out_endpoint ? 1 : 0
   domain_name = var.target_domain_name
-  name = var.target_domain_name
   rule_type            = "FORWARD"
   resolver_endpoint_id = aws_route53_resolver_endpoint.out[0].id
 
@@ -179,4 +178,10 @@ resource "aws_route53_resolver_rule" "this" {
   }
 
   tags = merge({Name = "${var.name}-${var.target_domain_name}"}, var.common_tags)
+}
+
+resource "aws_route53_resolver_rule_association" "this" {
+  count = var.create_r53_out_endpoint ? 1 : 0
+  resolver_rule_id = aws_route53_resolver_rule.this[0].id
+  vpc_id           = aws_vpc.this.id
 }

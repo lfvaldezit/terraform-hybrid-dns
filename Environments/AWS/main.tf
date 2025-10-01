@@ -34,9 +34,9 @@ module "vpc" {
   target_ip_secondary     = var.target_ip_secondary
 }
 
-module "ec2-app" {
+module "ec2-web-A" {
   source             = "../../modules/ec2"
-  ec2_name           = "${var.name}-ec2-app"
+  ec2_name           = "${var.name}-ec2-web-A"
   ami_id             = var.ami_id
   instance_type      = var.instance_type
   security_group_ids = [module.security-group.id]
@@ -44,6 +44,15 @@ module "ec2-app" {
   common_tags        = local.common_tags
 }
 
+module "ec2-web-B" {
+  source             = "../../modules/ec2"
+  ec2_name           = "${var.name}-ec2-web-B"
+  ami_id             = var.ami_id
+  instance_type      = var.instance_type
+  security_group_ids = [module.security-group.id]
+  subnet_id          = module.vpc.private_subnet_ids[1]
+  common_tags        = local.common_tags
+}
 
 module "peering" {
   source      = "../../modules/peering"
@@ -64,6 +73,7 @@ module "route53-zone" {
   source       = "../../modules/route53-zone"
   domain_name  = var.domain_name
   vpc_id       = module.vpc.vpc_id
-  record_name  = "webA.aws.example4life.org"
-  record_value = module.ec2-app.private_ip
+  record_name  = "web.aws.example4life.org"
+  record_value = [module.ec2-web-A.private_ip, module.ec2-web-B.private_ip]
 }
+ 

@@ -88,8 +88,9 @@
     name       = "vpc-aws"
     cidr_block = "192.168.0.0/16"
 
-    subnets = [{ name = "aws-private-1a", cidr_block = "192.168.1.0/24", az = "us-east-1a" },
-    { name = "aws-private-1b", cidr_block = "192.168.2.0/24", az = "us-east-1b" }]
+    subnets = [
+        { name = "aws-private-1a", cidr_block = "192.168.1.0/24", az = "us-east-1a" },
+        { name = "aws-private-1b", cidr_block = "192.168.2.0/24", az = "us-east-1b" }]
 
     ami_id        = "ami-08982f1c5bf93d976"
     instance_type = "t2.micro"

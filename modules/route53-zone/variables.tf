@@ -11,5 +11,5 @@ variable "record_name" {
 }
 
 variable "record_value" {
-  type = string
+  type = list(string)
 }

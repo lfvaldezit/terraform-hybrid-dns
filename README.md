@@ -63,8 +63,8 @@
     ONPREM-VPC_ID = "vpc-xxxxxxxxxxxxxxxxx"
     ```
 
-   Connect using Session Manager into the  `*-ec2-app`
-Type `sudo nano /etc/systemd/resolved.conf` and add the following:
+   Connect using Session Manager into the  `*-ec2-app`  
+   Type `sudo nano /etc/systemd/resolved.conf` and add the following:
 
     ```bash
     DNS= 10.192.1.27 10.192.2.107

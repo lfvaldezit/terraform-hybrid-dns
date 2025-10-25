@@ -1,7 +1,7 @@
 # Hybrid DNS between AWS and simulated ONPREM infra
 
 ## 🏗️ Architecture
-<img width="900" height="621" alt="image" src="https://github.com/lfvaldezit/terraform-hybrid-dns/blob/main/image.png" />
+<img width="900" height="621" alt="image" src="https://raw.githubusercontent.com/lfvaldezit/terraform-hybrid-dns/main/image.png" />
 
 - **VPC**: An isolated environment for launching AWS resources
 - **EC2 Instances**: VM used to provision ON-PREM DNS servers and APP servers
